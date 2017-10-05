@@ -1,2 +1,2 @@
-# ej2-ng-routing-dropdownlist
-EJ2 DropDownList Angular Routing sample
+# ej2-ng-router-dropdownlist
+DropDownList angular routing
