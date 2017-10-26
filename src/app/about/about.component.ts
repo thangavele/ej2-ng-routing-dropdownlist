@@ -1,6 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
-import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns'
+import { Component, } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'about',
@@ -8,27 +7,27 @@ import { DropDownListComponent } from '@syncfusion/ej2-ng-dropdowns'
   templateUrl: './about.component.html'
 })
 export class AboutComponent {
-  constructor(private route: ActivatedRoute,private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router) {
   }
-  @ViewChild('sample')
-  public dropdownlistObj: DropDownListComponent;
-
-  public selectedID: string;
+  public selectedID: number;
   public data: Object[];
   public fields: Object = { text: 'Game', value: 'Id' };
-  ngOnInit(): void { 
-      this.data = [];
-      this.getData();
-      this.selectedID = this.route.snapshot.data['selectedID'];
+  ngOnInit(): void {
+    this.data = [];
+    this.getData();
+    this.selectedID = this.route.snapshot.data['selectedID'];
   }
-  getData(){
-      this.data = [
-        { Id: 'Game1', Game: 'Cricket' },
-        { Id: 'Game2', Game: 'Football' },
-        { Id: 'Game3', Game: 'Golf' },
-        { Id: 'Game4', Game: 'Hockey' },
-        { Id: 'Game5', Game: 'Snooker' },
-        { Id: 'Game6', Game: 'Tennis' }
-      ];
+  getData() {
+    this.data = [
+      { Id: 1, Game: 'Cricket' },
+      { Id: 2, Game: 'Football' },
+      { Id: 3, Game: 'Golf' },
+      { Id: 4, Game: 'Hockey' },
+      { Id: 5, Game: 'Snooker' },
+      { Id: 6, Game: 'Tennis' }
+    ];
+  }
+  onClick(){
+    this.selectedID = 3;
   }
 }

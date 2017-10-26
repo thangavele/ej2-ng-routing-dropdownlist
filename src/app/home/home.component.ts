@@ -8,10 +8,9 @@ import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 })
 export class HomeComponent {
   constructor(private route: ActivatedRoute, private router: Router) {
-    
   }
   onChange(e:any){ 
-    this.router.config[2].data['selectedID'] = e.target.value;
+    this.router.config[2].data['selectedID'] = parseInt(e.target.value);
     this.router.resetConfig(this.router.config);
   }
 }
